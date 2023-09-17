@@ -1,8 +1,10 @@
 #include "main.h"
 
-/*
- * @_printf -  produces output according to a format.
+/**
+ * _printf - produces output according to a format.
+ *
  * @format: a character string.
+ *
  * Return:  the number of characters printed.
 */
 
@@ -11,6 +13,7 @@ int _printf(const char *format, ...)
 	int i = 0;
 
 	va_list list;
+
 	va_start(list, format);
 
 	while (*format)
@@ -33,6 +36,10 @@ int _printf(const char *format, ...)
 			else if (*format == 's')
 			{
 				print_string(list);
+			}
+			else if (*format == '%')
+			{
+				_putchar('%');
 			}
 		}
 		format++;
