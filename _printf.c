@@ -2,38 +2,51 @@
 
 /**
  * _printf - produces output according to a format.
+ *
  * @format: a character string.
+ *
  * Return:  the number of characters printed.
 */
 
 int _printf(const char *format, ...)
 {
 	int i = 0;
+
 	va_list list;
 
 	va_start(list, format);
 
-	while (format[i])
+	while (*format)
 	{
-		if (format[i] != '%')
+		if (*format != '%')
 		{
-			_putchar(format[i]);
+			_putchar(*format);
 		}
-		else if (format[i] == '%')
+		else if (*format == '%')
 		{
-			i++;
-			if (format[i] == ' ' || format[i] == '%' || format[i] == 0 || format[i] == '')
+			format++;
+			if (*format == ' ' || *format == '\0' || *format == 0)
+			{
 				return (-1);
-			else if (format[i] == 'c')
+			}
+			else if (*format == 'c')
+			{
 				print_char(list);
-			else if (format[i] == 's')
+			}
+			else if (*format == 's')
+			{
 				print_string(list);
-			else if (format[i] == '%')
+			}
+			else if (*format == '%')
+			{
 				_putchar('%');
+			}
 		}
+		format++;
 		i++;
 	}
-	i--;
+
+
 	va_end(list);
 	return (i);
 }
