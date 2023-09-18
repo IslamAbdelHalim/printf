@@ -27,8 +27,8 @@ void print_string(va_list arg)
 
 void print_char(va_list arg)
 {
-	int ch;
+	char ch;
 
-	ch = va_arg(arg, int);
+	ch = va_arg(arg, char);
 	_putchar(ch);
 }
