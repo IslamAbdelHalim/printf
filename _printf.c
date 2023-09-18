@@ -45,6 +45,7 @@ int _printf(const char *format, ...)
 		}
 		format++;
 	}
+	i--;
 	va_end(list);
 	return (i);
 }
