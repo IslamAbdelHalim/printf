@@ -27,6 +27,7 @@ int _printf(const char *format, ...)
 			format++;
 			if (*format == ' ' || *format == '\0' || *format == 0)
 			{
+				i++;
 				return (-1);
 			}
 			else if (*format == 'c')
@@ -45,7 +46,6 @@ int _printf(const char *format, ...)
 		}
 		format++;
 	}
-	i--;
 	va_end(list);
 	return (i);
 }
