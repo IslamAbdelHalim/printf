@@ -10,16 +10,10 @@
 
 int print_string(va_list arg)
 {
-<<<<<<< HEAD
 	char *argument;
 	int i = 0;
-=======
-    char* argument;
->>>>>>> refs/remotes/origin/main
 
     argument = va_arg(arg, char*);
-
-<<<<<<< HEAD
 	if (argument == NULL)
 	{
 		argument = "(null)";
@@ -32,13 +26,6 @@ int print_string(va_list arg)
 		i++;
 	}
 	return (i);
-=======
-    while (*argument != '\0')
-    {
-        _putchar(*argument);
-        argument++;
-    }
->>>>>>> refs/remotes/origin/main
 }
 
 /**
