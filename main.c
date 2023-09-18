@@ -15,7 +15,6 @@ int main(void)
 	_printf("My name is: %s,\n And My first char of my name is:%c \n", name, name[0]);
 	_printf("%s\n", NULL);
 	_printf("%c\n", NULL);
-	_printf("NULL: %c, %s\n", NULL, NULL);
 
 	return (0);
 }
