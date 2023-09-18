@@ -5,8 +5,8 @@
 #include <stdarg.h>
 
 int _putchar(char c);
-void print_string(va_list arg);
-void print_char(va_list arg);
+int print_string(va_list arg);
+int print_char(va_list arg);
 int _printf(const char *format, ...);
 
 

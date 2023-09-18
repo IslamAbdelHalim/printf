@@ -21,6 +21,7 @@ int _printf(const char *format, ...)
 		if (*format != '%')
 		{
 			_putchar(*format);
+			i++;
 		}
 		else if (*format == '%')
 		{
@@ -31,22 +32,20 @@ int _printf(const char *format, ...)
 			}
 			else if (*format == 'c')
 			{
-				print_char(list);
+				i += print_char(list);
 			}
 			else if (*format == 's')
 			{
-				print_string(list);
+				i += print_string(list);
 			}
 			else if (*format == '%')
 			{
 				_putchar('%');
+				i++;
 			}
 		}
 		format++;
-		i++;
 	}
-
-
 	va_end(list);
 	return (i);
 }
