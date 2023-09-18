@@ -27,8 +27,7 @@ int _printf(const char *format, ...)
 			format++;
 			if (*format == ' ' || *format == '\0' || *format == 0)
 			{
-				i++;
-				return (0);
+				return (-1);
 			}
 			else if (*format == 'c')
 			{
