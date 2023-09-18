@@ -8,15 +8,15 @@
 
 void print_string(va_list arg)
 {
-	char *argument;
+    char* argument;
 
-	argument = va_arg(arg, char *);
+    argument = va_arg(arg, char*);
 
-	while (*argument != '\0')
-	{
-		_putchar(*argument);
-		argument++;
-	}
+    while (*argument != '\0')
+    {
+        _putchar(*argument);
+        argument++;
+    }
 }
 
 /**
@@ -27,8 +27,21 @@ void print_string(va_list arg)
 
 void print_char(va_list arg)
 {
-	int ch;
+    int ch;
 
-	ch = va_arg(arg, int);
-	_putchar(ch);
+    ch = va_arg(arg, int);
+    _putchar(ch);
+}
+
+/**
+ * print_integer - function to print char.
+ * @arg: The argument
+*/
+void print_integer(int n)
+{
+    if (n != 0) 
+    {
+        print_integer(n / 10);
+        _putchar((n % 10) + '0');
+    }
 }
