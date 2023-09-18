@@ -16,7 +16,6 @@ int main(void)
 	_printf("%s\n", NULL);
 	_printf("%c\n", NULL);
 	_printf("NULL: %c, %s\n", NULL, NULL);
-	_printf("%");
 
 	return (0);
 }
