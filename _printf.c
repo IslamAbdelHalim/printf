@@ -12,6 +12,7 @@ int _printf(const char *format, ...)
 	va_list list;
 
 	va_start(list, format);
+
 	while (format[i])
 	{
 		if (format[i] != '%')
@@ -21,7 +22,7 @@ int _printf(const char *format, ...)
 		else if (format[i] == '%')
 		{
 			i++;
-			if (format[i] != 'c' || format[i] != 's' || format[i] != '%')
+			if (format[i] == ' ' || format[i] == '%' || format[i] == 0 || format[i] == '')
 				return (-1);
 			else if (format[i] == 'c')
 				print_char(list);
