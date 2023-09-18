@@ -8,11 +8,10 @@
  * Return:  the number of characters printed.
 */
 
-int _printf(const char* format, ...)
+int _printf(const char *format, ...)
 {
-    int i = 0, j;
-
-    va_list list;
+	int i = 0;
+	va_list list;
 
     va_start(list, format);
 
