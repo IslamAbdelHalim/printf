@@ -13,7 +13,8 @@ int print_string(va_list arg)
 	char *argument;
 	int i = 0;
 
-    argument = va_arg(arg, char*);
+	argument = va_arg(arg, char*);
+
 	if (argument == NULL)
 	{
 		argument = "(null)";
@@ -38,30 +39,11 @@ int print_string(va_list arg)
 
 int print_char(va_list arg)
 {
-<<<<<<< HEAD
 	char  ch;
 
 	ch = va_arg(arg, int);
 
 	_putchar(ch);
 	return (1);
-=======
-    int ch;
-
-    ch = va_arg(arg, int);
-    _putchar(ch);
 }
 
-/**
- * print_integer - function to print char.
- * @arg: The argument
-*/
-void print_integer(int n)
-{
-    if (n != 0) 
-    {
-        print_integer(n / 10);
-        _putchar((n % 10) + '0');
-    }
->>>>>>> refs/remotes/origin/main
-}
