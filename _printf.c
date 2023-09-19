@@ -34,6 +34,8 @@ int _printf(const char *format, ...)
 				i += print_char(list);
 			else if (*format == 's')
 				i += print_string(list);
+			else if (*format == 'd' || *format == 'i')
+				i += print_decimal(list);
 			else if (*format == '%')
 			{
 				_putchar('%');
