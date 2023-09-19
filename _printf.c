@@ -30,7 +30,7 @@ int _printf(const char *format, ...)
 			format++;
 
 			if (*format == '\0' || *format == ' ' || *format == 0)
-				break;
+				return (-1);
 			/*Handle character*/
 			if (*format == 'c')
 				i += print_char(list);
