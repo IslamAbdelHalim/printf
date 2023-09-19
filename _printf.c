@@ -17,6 +17,7 @@ int _printf(const char *format, ...)
 		return (-1);
 
 	va_start(list, format);
+
 	while (*format)
 	{
 		if (*format != '%')
@@ -28,28 +29,20 @@ int _printf(const char *format, ...)
 		{
 			format++;
 			if (*format == ' ' || *format == '\0' || *format == 0)
-			{
 				return (-1);
-			}
-			else if (*format == 'c')
-			{
+			/*Handle character*/
+			if (*format == 'c')
 				i += print_char(list);
-			}
-			else if (*format == 's')
-			{
+			/*Handle string*/
+			if (*format == 's')
 				i += print_string(list);
-			}
-			else if (*format == '%')
+			/*Handle percent*/
+			if (*format == '%')
 			{
 				_putchar('%');
 				i++;
 			}
-			else
-			{
-				_putchar('%');
-				_putchar(*format);
-			}
-		}
+
 		format++;
 	}
 	va_end(list);
