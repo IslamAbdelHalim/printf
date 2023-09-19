@@ -14,14 +14,15 @@ int print_integer(va_list arg)
 	{
 		_putchar('-');
 		digits++;
-		num = -num;
+		num *= -1;
 	}
 
 	temp = num;
-	do {
+	while (temp != 0)
+	{
 		temp /= 10;
 		digits++;
-	} while (temp != 0);
+	}
 	count = digits;
 	while (digits > 0)
 	{
