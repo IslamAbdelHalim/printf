@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * print_integer - Prints an integer
  * @arg: The argument
@@ -6,8 +7,9 @@
  */
 int print_integer(va_list arg)
 {
-	int num = va_arg(arg, int);
-	int digits = 0;
+	int num, digits = 0, temp, divisor, i, digit;
+
+       	num = va_arg(arg, int);
 
 	if (num < 0)
 	{
@@ -16,24 +18,24 @@ int print_integer(va_list arg)
 		num = -num;
 	}
 
-	int temp = num;
+	temp = num;
 	do {
 		temp /= 10;
-	digits++;
+		digits++;
 	} while (temp != 0);
 
 	while (digits > 0)
 	{
-		int divisor = 1;
-		for (int i = 1; i < digits; i++)
+		divisor = 1;
+		for (i = 1; i < digits; i++)
 			divisor *= 10;
-		int digit = num / divisor;
+		digit = num / divisor;
 		_putchar('0' + digit);
 		num %= divisor;
 		digits--;
 	}
 
-	return (digit)s;
+	return (digits);
 }
 
 /**
