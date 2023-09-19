@@ -7,10 +7,9 @@
  */
 int print_integer(va_list arg)
 {
-	int num, digits = 0, temp, divisor, i, digit;
+	int num, digits = 0, temp, divisor, i, digit, count;
 
-       	num = va_arg(arg, int);
-
+	num = va_arg(arg, int);
 	if (num < 0)
 	{
 		_putchar('-');
@@ -23,7 +22,7 @@ int print_integer(va_list arg)
 		temp /= 10;
 		digits++;
 	} while (temp != 0);
-
+	count = digits;
 	while (digits > 0)
 	{
 		divisor = 1;
@@ -36,7 +35,7 @@ int print_integer(va_list arg)
 		num %= divisor;
 		digits--;
 	}
-	return (digits);
+	return (count);
 }
 
 /**
