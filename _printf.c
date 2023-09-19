@@ -28,17 +28,13 @@ int _printf(const char *format, ...)
 		else if (*format == '%')
 		{
 			format++;
-
 			if (*format == '\0' || *format == ' ' || *format == 0)
 				return (-1);
-			/*Handle character*/
 			if (*format == 'c')
 				i += print_char(list);
-			/*Handle string*/
-			if (*format == 's')
+			else if (*format == 's')
 				i += print_string(list);
-			/*Handle percent*/
-			if (*format == '%')
+			else if (*format == '%')
 			{
 				_putchar('%');
 				i++;

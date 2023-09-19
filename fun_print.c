@@ -46,4 +46,3 @@ int print_char(va_list arg)
 	_putchar(ch);
 	return (1);
 }
-
