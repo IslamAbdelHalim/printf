@@ -13,9 +13,10 @@ int _printf(const char *format, ...)
 	int i = 0;
 	va_list list;
 
-	va_start(list, format);
-	if (!format)
+	if (format == NULL)
 		return (-1);
+
+	va_start(list, format);
 	while (*format)
 	{
 		if (*format != '%')
@@ -42,6 +43,11 @@ int _printf(const char *format, ...)
 			{
 				_putchar('%');
 				i++;
+			}
+			else
+			{
+				_putchar('%');
+				_putchar(*format);
 			}
 		}
 		format++;
