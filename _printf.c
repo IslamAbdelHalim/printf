@@ -42,7 +42,7 @@ int _printf(const char *format, ...)
 				_putchar('%');
 				i++;
 			}
-
+		}
 		format++;
 	}
 	va_end(list);
