@@ -22,13 +22,14 @@ int _printf(const char *format, ...)
 	{
 		if (*format != '%')
 		{
-			_putchar(*format);
+			write(1, format,1);
 			i++;
 		}
 		else if (*format == '%')
 		{
 			format++;
-			if (*format == '\0')
+
+			if (*format == '\0' || *format == ' ' || *format == 0)
 				break;
 			/*Handle character*/
 			if (*format == 'c')

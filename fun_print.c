@@ -26,7 +26,7 @@ int print_string(va_list arg)
 		argument++;
 		i++;
 	}
-	return (i);
+	return (i - 1);
 }
 
 /**
