@@ -60,6 +60,21 @@ int print_integer(va_list arg)
 
 	num = va_arg(arg, int);
 
+	if (num == INT_MIN)
+	{
+		_putchar('-');
+		_putchar('2');
+		_putchar('1');
+		_putchar('4');
+		_putchar('7');
+		_putchar('4');
+		_putchar('8');
+		_putchar('3');
+		_putchar('6');
+		_putchar('4');
+		_putchar('8');
+		return (11);
+	}	
 	if (num == '\0')
 	{
 		_putchar('0');
@@ -68,6 +83,7 @@ int print_integer(va_list arg)
 
 	if (num < 0)
 	{
+		_putchar('-');
 		num *= -1;
 		count++;
 	}
