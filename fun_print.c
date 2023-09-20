@@ -56,14 +56,21 @@ int print_char(va_list arg)
 
 int print_integer(va_list arg)
 {
-	int num, digits = 0, temp, divisor, i, digit, count;
+	int num, digits = 0, temp, divisor, i, digit, count = 0; 
 
 	num = va_arg(arg, int);
+
+	if (num == '\0')
+	{
+		_putchar(0 + '0');
+		return (1);
+	}
 
 	if (num < 0)
 	{
 		_putchar('-');
 		num *= -1;
+		count++;
 	}
 
 	temp = num;
@@ -74,8 +81,7 @@ int print_integer(va_list arg)
 		digits++;
 	}
 
-	count = digits;
-
+	count += digits;
 	while (digits > 0)
 	{
 		divisor = 1;
