@@ -56,7 +56,7 @@ int print_char(va_list arg)
 
 int print_integer(va_list arg)
 {
-	int num, digits = 0, temp, divisor, i, digit, count = 0; 
+	int num, digits = 0, temp, divisor, i, digit, count = 0;
 
 	num = va_arg(arg, int);
 
