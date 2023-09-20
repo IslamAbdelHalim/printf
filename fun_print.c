@@ -62,13 +62,12 @@ int print_integer(va_list arg)
 
 	if (num == '\0')
 	{
-		_putchar(0 + '0');
+		_putchar('0');
 		return (1);
 	}
 
 	if (num < 0)
 	{
-		_putchar('-');
 		num *= -1;
 		count++;
 	}
